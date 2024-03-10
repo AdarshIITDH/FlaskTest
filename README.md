@@ -1,6 +1,7 @@
 # FlaskTest
 
-in app.py 
+in app.py modify like below so that it can accept all host not only local host
+
 ```
 from flask import Flask
 
