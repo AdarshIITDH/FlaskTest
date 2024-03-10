@@ -56,10 +56,22 @@ pipeline {
 Docker building
 as time is limited so not including the docker part in jenkins pipeline
 ```
-FROM python:3.9-slim
+# Build stage
+FROM python:3.9-slim as builder
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Testing stage
+FROM builder as tester
+WORKDIR /app
+COPY . .
+RUN python test_app.py
+
+# Runtime stage
+FROM python:3.9-slim
+WORKDIR /app
+COPY --from=builder /app /app
 COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
