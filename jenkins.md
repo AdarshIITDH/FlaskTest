@@ -1,8 +1,6 @@
 pipeline {
     agent any
-
     stages {
-
         stage('Cloning the code') {
             steps {
                 git url: 'https://github.com/AdarshIITDH/FlaskTest.git', branch: 'main'
@@ -18,7 +16,6 @@ pipeline {
                 }
             }
         }
-
         stage('Run Tests') {
             steps {
                 script {
