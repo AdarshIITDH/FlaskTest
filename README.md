@@ -64,8 +64,8 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 Application is working fine 
-![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/7a2d874f-0700-4677-abbb-921b4cf1945b)
 
+![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/7a2d874f-0700-4677-abbb-921b4cf1945b)
 
 
 ![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/083f55ea-7b9d-4eb3-b864-f9d5278367ec)
