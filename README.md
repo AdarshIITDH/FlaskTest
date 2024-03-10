@@ -136,7 +136,8 @@ pipeline {
 ```
 ![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/09357ae9-5dfc-44de-aa97-216e397b8f67)
 
-![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/a7e9d97d-5cc6-41b9-81e6-3b6faae6b08d)
+![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/29c4a5a2-89f3-4d37-adf9-00dd59861358)
+
 Dont forget to add jenkins in docker group to run docker command
 
 ```
