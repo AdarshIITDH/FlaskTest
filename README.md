@@ -53,7 +53,7 @@ pipeline {
 ![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/a0e66ab3-ce21-40e4-ab99-e562f6c9c039)
 
 Docker building
-
+as time is limited so not including the docker part in jenkins pipeline
 ```
 FROM python:3.9-slim
 WORKDIR /app
@@ -63,6 +63,8 @@ COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
 ```
+![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/083f55ea-7b9d-4eb3-b864-f9d5278367ec)
+
 
 
 
