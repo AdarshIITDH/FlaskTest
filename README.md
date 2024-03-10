@@ -124,6 +124,15 @@ pipeline {
 ```
 ![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/09357ae9-5dfc-44de-aa97-216e397b8f67)
 
+![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/a7e9d97d-5cc6-41b9-81e6-3b6faae6b08d)
+Dont forget to add jenkins in docker group to run docker command
+
+```
+sudo usermod -aG docker jenkins
+sudo systemctl restart docker
+sudo systemctl restart jenkins
+```
+
 For deploying the application in kubernetes 
 
 deployment file
