@@ -63,6 +63,7 @@ COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
 ```
+
 ![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/083f55ea-7b9d-4eb3-b864-f9d5278367ec)
 
 the whole jenkins pipeline will look like this
@@ -118,6 +119,52 @@ pipeline {
 ```
 ![image](https://github.com/AdarshIITDH/FlaskTest/assets/60352729/09357ae9-5dfc-44de-aa97-216e397b8f67)
 
+For deploying the application in kubernetes 
 
+deployment file
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-test-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flasktest
+  template:
+    metadata:
+      labels:
+        app: flasktest
+    spec:
+      containers:
+      - name: flask-app
+        image: flasktest:latest 
+        ports:
+        - containerPort: 5000 
 
+```
+```
+kubectl apply -f flask-test-deployment.yaml
+```
+after that will require to expose service so that user can access it 
 
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-test-service
+spec:
+  selector:
+    app: flasktest
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
+```
+Load balancer service will enable a dns for user to hit and access the application
+
+```
+kubectl apply -f flask-test-service.yaml
+```
